@@ -30,5 +30,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.irozon.sneaker:sneaker:2.0.0'
     implementation 'com.github.Shashank02051997:FancyToast-Android:0.1.6'
+    implementation 'com.github.jinatonic.confetti:confetti:1.1.2'
 
 }

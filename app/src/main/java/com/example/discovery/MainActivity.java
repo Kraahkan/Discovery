@@ -17,6 +17,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.github.jinatonic.confetti.CommonConfetti;
 import com.irozon.sneaker.Sneaker;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
@@ -81,7 +82,14 @@ public class MainActivity extends AppCompatActivity {
                 .sneakSuccess();*/
 
 
+        // Make success feel great
         FancyToast.makeText(this,"Hello World !",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+        CommonConfetti.rainingConfetti((ViewGroup)navView.getParent(), new int[] { Color.BLACK })
+                .infinite();
+
+
+
+
         // https://github.com/yuyakaido/CardStackView
         // https://github.com/flschweiger/SwipeStack
         // https://github.com/UFreedom/FloatingView
