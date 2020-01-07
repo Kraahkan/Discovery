@@ -3,6 +3,7 @@ package com.example.discovery;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.content.ContextCompat;
@@ -10,12 +11,14 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.irozon.sneaker.Sneaker;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mTextMessage;
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.app_name);
+                    FancyToast.makeText(getApplicationContext(),"Hello World !",FancyToast.LENGTH_LONG,FancyToast.DEFAULT,true);
                     return true;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_dashboard);
@@ -56,22 +60,28 @@ public class MainActivity extends AppCompatActivity {
 
         Window window = this.getWindow();
 
-// clear FLAG_TRANSLUCENT_STATUS flag:
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        // Don't need for this app
+        navView.setVisibility(View.INVISIBLE);
 
-// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if(Build.VERSION.SDK_INT >= 21.0){
 
-// finally change the color
-        window.setStatusBarColor(Color.parseColor("#0000ff"));
+            // clear FLAG_TRANSLUCENT_STATUS flag:
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
+            // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
-        Sneaker.with(this) // Activity, Fragment or ViewGroup
+            //this code will be executed on devices running on DONUT (NOT ICS) or later
+            window.setStatusBarColor(Color.parseColor("#0000ff"));
+        }
+
+        /* Sneaker.with(this) // Activity, Fragment or ViewGroup
                 .setTitle("Success!!")
                 .setMessage("This is the success message")
-                .sneakSuccess();
+                .sneakSuccess();*/
 
 
+        FancyToast.makeText(this,"Hello World !",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
         // https://github.com/yuyakaido/CardStackView
         // https://github.com/flschweiger/SwipeStack
         // https://github.com/UFreedom/FloatingView
@@ -87,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         // https://github.com/jinatonic/confetti
         // https://github.com/aurelhubert/ahbottomnavigation
         // https://github.com/ncapdevi/FragNav
-        // https://github.com/Shashank02051997/FancyToast-Android
+        //
         // https://github.com/saket/InboxRecyclerView
 
 
