@@ -16,9 +16,12 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.jinatonic.confetti.CommonConfetti;
 import com.irozon.sneaker.Sneaker;
+import com.shashank.sony.fancygifdialoglib.FancyGifDialog;
+import com.shashank.sony.fancygifdialoglib.FancyGifDialogListener;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
+        ViewGroup mainViewGroup = findViewById(R.id.container);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 
@@ -84,10 +88,25 @@ public class MainActivity extends AppCompatActivity {
 
         // Make success feel great
         FancyToast.makeText(this,"Hello World !",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
-        CommonConfetti.rainingConfetti((ViewGroup)navView.getParent(), new int[] { Color.BLACK })
+        CommonConfetti.rainingConfetti((ViewGroup)mTextMessage.getParent(), new int[] { Color.BLUE })
                 .infinite();
+        CommonConfetti.explosion(mainViewGroup,500,500,new int[] { Color.BLACK });
 
-
+        if (1 == 0)
+            new FancyGifDialog.Builder(this)
+                    .setTitle("Granny eating chocolate dialog box")
+                    .setMessage("This is a granny eating chocolate dialog box. This library is used to help you easily create fancy gify dialog.")
+                    .setPositiveBtnText("Ok")
+                    .setPositiveBtnBackground("#FF4081")
+                    .setGifResource(R.drawable.gif1)   //Pass your Gif here
+                    .isCancellable(true)
+                    .OnPositiveClicked(new FancyGifDialogListener() {
+                        @Override
+                        public void OnClick() {
+                            Toast.makeText(MainActivity.this,"Ok",Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .build();
 
 
         // https://github.com/yuyakaido/CardStackView
