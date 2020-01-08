@@ -32,4 +32,5 @@ dependencies {
     implementation 'com.github.Shashank02051997:FancyToast-Android:0.1.6'
     implementation 'com.github.jinatonic.confetti:confetti:1.1.2'
     implementation 'com.github.Shashank02051997:FancyGifDialog-Android:1.2'
+    implementation 'com.codemybrainsout.onboarding:onboarder:1.0.4'
 }
