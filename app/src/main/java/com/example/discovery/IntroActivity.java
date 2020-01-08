@@ -40,7 +40,7 @@ public class IntroActivity extends AhoyOnboarderActivity {
         colorList.add(R.color.colorPrimaryDark);
         colorList.add(R.color.colorPrimaryDark);
         colorList.add(R.color.colorPrimaryDark);
-       setColorBackground(colorList);
+        setColorBackground(colorList);
 
         //or
 

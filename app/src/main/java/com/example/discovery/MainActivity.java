@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
             //this code will be executed on devices running on DONUT (NOT ICS) or later
-            window.setStatusBarColor(Color.parseColor("#0000ff"));
+            window.setStatusBarColor(Styles.getPrimary());
         }
 
         /* Sneaker.with(this) // Activity, Fragment or ViewGroup
