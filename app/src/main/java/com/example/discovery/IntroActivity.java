@@ -16,7 +16,8 @@ public class IntroActivity extends AhoyOnboarderActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro);
+
+
 
         AhoyOnboarderCard ahoyOnboarderCard1 = new AhoyOnboarderCard("Title", "Description", R.drawable.curved_shape);
         ahoyOnboarderCard1.setBackgroundColor(R.color.black_transparent);
@@ -36,18 +37,17 @@ public class IntroActivity extends AhoyOnboarderActivity {
         setOnboardPages(pages);
 
         List<Integer> colorList = new ArrayList<>();
-        colorList.add(R.color.colorPrimary);
-        colorList.add(R.color.colorPrimary);
-        colorList.add(R.color.colorPrimary);
-        setColorBackground(colorList);
+        colorList.add(R.color.colorPrimaryDark);
+        colorList.add(R.color.colorPrimaryDark);
+        colorList.add(R.color.colorPrimaryDark);
+       setColorBackground(colorList);
 
         //or
 
-        setColorBackground(R.color.colorPrimary);
+      //  setColorBackground(R.color.colorPrimary);
 
-        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Light.ttf");
-        setFont(face);
-
+      //  Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Light.ttf");
+      //  setFont(face);
 
 
     }
