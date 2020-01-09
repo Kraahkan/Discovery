@@ -25,61 +25,44 @@ import com.shashank.sony.fancygifdialoglib.FancyGifDialogListener;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView mTextMessage;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    /*
 
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.app_name);
-                    FancyToast.makeText(getApplicationContext(),"Hello World !",FancyToast.LENGTH_LONG,FancyToast.DEFAULT,true);
-                    return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
+        private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+                = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        mTextMessage.setText(R.string.app_name);
+                        FancyToast.makeText(getApplicationContext(),"Hello World !",FancyToast.LENGTH_LONG,FancyToast.DEFAULT,true);
+                        return true;
+                    case R.id.navigation_dashboard:
+                        mTextMessage.setText(R.string.title_dashboard);
+                        return true;
+                    case R.id.navigation_notifications:
+                        mTextMessage.setText(R.string.title_notifications);
+                        return true;
+                }
+                return false;
             }
-            return false;
-        }
-    };
-
+        };
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        mTextMessage = findViewById(R.id.message);
+
         ViewGroup mainViewGroup = findViewById(R.id.container);
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+      //  navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-
+        navView.setVisibility(View.INVISIBLE);
         // Customize colors
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
-
-        Window window = this.getWindow();
-
-        // Don't need for this app
-        navView.setVisibility(View.INVISIBLE);
-
-        if(Build.VERSION.SDK_INT >= 21.0){
-
-            // clear FLAG_TRANSLUCENT_STATUS flag:
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-
-            // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-
-            //this code will be executed on devices running on DONUT (NOT ICS) or later
-            window.setStatusBarColor(getResources().getColor(R.color.colorPrimary));
-        }
+       styleStuff();
 
         /* Sneaker.with(this) // Activity, Fragment or ViewGroup
                 .setTitle("Success!!")
@@ -88,10 +71,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Make success feel great
-        FancyToast.makeText(this,"Hello World !",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
-        CommonConfetti.rainingConfetti((ViewGroup)mTextMessage.getParent(), new int[] { Color.BLUE })
-                .infinite();
-        CommonConfetti.explosion(mainViewGroup,500,500,new int[] { Color.BLACK });
+     //   FancyToast.makeText(this,"Hello World !",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+       // CommonConfetti.rainingConfetti((ViewGroup)mTextMessage.getParent(), new int[] { Color.BLUE })
+      //  CommonConfetti.explosion(mainViewGroup,500,500,new int[] { Color.BLACK });
 
         if (1 == 0)
             new FancyGifDialog.Builder(this)
@@ -129,6 +111,27 @@ public class MainActivity extends AppCompatActivity {
         // https://github.com/saket/InboxRecyclerView
 
 
+    }
+
+    private void styleStuff() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
+
+        Window window = this.getWindow();
+
+        // Don't need for this app
+
+        if(Build.VERSION.SDK_INT >= 21.0){
+
+            // clear FLAG_TRANSLUCENT_STATUS flag:
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+            // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+            //this code will be executed on devices running on DONUT (NOT ICS) or later
+            window.setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+        }
     }
 
 }

@@ -20,19 +20,24 @@ public class IntroActivity extends AhoyOnboarderActivity {
 
 
 
-        AhoyOnboarderCard ahoyOnboarderCard1 = new AhoyOnboarderCard("Title", "Description", R.drawable.curved_shape);
-        ahoyOnboarderCard1.setBackgroundColor(R.color.black_transparent);
-        ahoyOnboarderCard1.setTitleColor(R.color.white);
-        ahoyOnboarderCard1.setDescriptionColor(R.color.grey_200);
-        ahoyOnboarderCard1.setTitleTextSize(dpToPixels(10, this));
-        ahoyOnboarderCard1.setDescriptionTextSize(dpToPixels(8, this));
-        ahoyOnboarderCard1.setIconLayoutParams(64, 64, 64, 64, 64, 64);
+        AhoyOnboarderCard card1 = new AhoyOnboarderCard("Welcome to the best place on earth", "Here is some text", R.drawable.curved_shape);
+        AhoyOnboarderCard card2 = new AhoyOnboarderCard("Glad you could make it", "Look, some more text", R.drawable.curved_shape);
+        AhoyOnboarderCard card3 = new AhoyOnboarderCard("By the way, you suck", "Ya dirty dog", R.drawable.curved_shape);
 
+        AhoyOnboarderCard[] introCards = {card1, card2, card3};
 
         List<AhoyOnboarderCard> pages = new ArrayList<>();
-        pages.add(ahoyOnboarderCard1);
-        pages.add(ahoyOnboarderCard1);
-        pages.add(ahoyOnboarderCard1);
+
+        for (AhoyOnboarderCard card : introCards) {
+            card.setBackgroundColor(R.color.colorAccent);
+            card.setTitleColor(R.color.white);
+            card.setDescriptionColor(R.color.black);
+            card.setTitleTextSize(dpToPixels(16, this));
+            card.setDescriptionTextSize(dpToPixels(10, this));
+            card.setIconLayoutParams(128, 128, 64, 64, 64, 64);
+
+            pages.add(card);
+        }
 
 
         setOnboardPages(pages);
