@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         // Customize colors
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0000ff")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
 
         Window window = this.getWindow();
 
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
             //this code will be executed on devices running on DONUT (NOT ICS) or later
-            window.setStatusBarColor(Styles.getPrimary());
+            window.setStatusBarColor(getResources().getColor(R.color.colorPrimary));
         }
 
         /* Sneaker.with(this) // Activity, Fragment or ViewGroup

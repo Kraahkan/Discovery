@@ -1,6 +1,7 @@
 package com.example.discovery;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,10 +37,11 @@ public class IntroActivity extends AhoyOnboarderActivity {
 
         setOnboardPages(pages);
 
+
         List<Integer> colorList = new ArrayList<>();
-        colorList.add(R.color.colorPrimaryDark);
-        colorList.add(R.color.colorPrimaryDark);
-        colorList.add(R.color.colorPrimaryDark);
+        colorList.add(R.color.colorPrimary);
+        colorList.add(R.color.colorPrimary);
+        colorList.add(R.color.colorPrimary);
         setColorBackground(colorList);
 
         //or
