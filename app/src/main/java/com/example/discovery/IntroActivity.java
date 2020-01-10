@@ -18,8 +18,6 @@ public class IntroActivity extends AhoyOnboarderActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         AhoyOnboarderCard card1 = new AhoyOnboarderCard("Welcome to the best place on earth", "Here is some text", R.drawable.curved_shape);
         AhoyOnboarderCard card2 = new AhoyOnboarderCard("Glad you could make it", "Look, some more text", R.drawable.curved_shape);
         AhoyOnboarderCard card3 = new AhoyOnboarderCard("By the way, you suck", "Ya dirty dog", R.drawable.curved_shape);
