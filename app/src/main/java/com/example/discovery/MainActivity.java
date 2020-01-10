@@ -22,6 +22,8 @@ import com.irozon.sneaker.Sneaker;
 import com.shashank.sony.fancygifdialoglib.FancyGifDialog;
 import com.shashank.sony.fancygifdialoglib.FancyGifDialogListener;
 import com.shashank.sony.fancytoastlib.FancyToast;
+import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
+import com.yuyakaido.android.cardstackview.CardStackView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -86,6 +88,13 @@ public class MainActivity extends AppCompatActivity {
         // https://github.com/saket/InboxRecyclerView
 
 
+    }
+
+    private void setupCards() {
+        CardStackView cardStackView = findViewById(R.id.card_stack_view);
+        CardStackLayoutManager cardStackLayoutManager = new CardStackLayoutManager();
+                cardStackView.setLayoutManager(); = CardStackLayoutManager()
+        cardStackView.adapter = CardStackAdapter()
     }
 
     private void styleStuff() {
