@@ -1,4 +1,4 @@
-package com.yuyakaido.android.cardstackview.sample
+package com.example.discovery
 
 import android.os.Bundle
 import android.util.Log
@@ -14,12 +14,17 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DiffUtil
+import com.example.discovery.R
 import com.google.android.material.navigation.NavigationView
 import com.yuyakaido.android.cardstackview.*
+import com.yuyakaido.android.cardstackview.sample.CardStackAdapter
+import com.yuyakaido.android.cardstackview.sample.Spot
+import com.yuyakaido.android.cardstackview.sample.SpotDiffCallback
+
 import java.util.*
 
 class TestActivity : AppCompatActivity(), CardStackListener {
-   
+
     private val drawerLayout by lazy { findViewById<DrawerLayout>(R.id.drawer_layout) }
     private val cardStackView by lazy { findViewById<CardStackView>(R.id.card_stack_view) }
     private val manager by lazy { CardStackLayoutManager(this, this) }
