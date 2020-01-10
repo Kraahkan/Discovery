@@ -3,8 +3,12 @@ package com.example.discovery;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
+
 import com.codemybrainsout.onboarder.AhoyOnboarderActivity;
 import com.codemybrainsout.onboarder.AhoyOnboarderCard;
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +47,12 @@ public class IntroActivity extends AhoyOnboarderActivity {
         colorList.add(R.color.colorPrimary);
         setColorBackground(colorList);
 
+        setFinishButtonDrawableStyle(ContextCompat.getDrawable(this, R.drawable.rounded_button));
+
+        YoYo.with(Techniques.FadeIn)
+                .duration(1400)
+                .playOn(findViewById(R.id.vp_pager));
+
 
         //or
 
@@ -59,6 +69,8 @@ public class IntroActivity extends AhoyOnboarderActivity {
         Intent myIntent = new Intent(this, MainActivity.class);
         myIntent.putExtra("key", 2); //Optional parameters
         this.startActivity(myIntent);
+
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         finish();
 
 

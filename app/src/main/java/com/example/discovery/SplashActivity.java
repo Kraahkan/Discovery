@@ -25,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
 
         TextView logoTextView = findViewById(R.id.logoTextView);
         YoYo.with(Techniques.FadeIn)
-                .duration(2400)
+                .duration(2000)
                 .playOn(logoTextView);
 
         styleStuff();
@@ -40,7 +40,7 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
 
             }
-        }, 3100);
+        }, 2900);
 
 
     }
