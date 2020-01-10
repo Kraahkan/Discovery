@@ -46,9 +46,9 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void styleStuff() {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
-        actionBar.hide();
+       // ActionBar actionBar = getSupportActionBar();
+       // actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
+      //  actionBar.hide();
 
         Window window = this.getWindow();
 

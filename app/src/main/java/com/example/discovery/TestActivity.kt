@@ -14,7 +14,6 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DiffUtil
-import com.example.discovery.R
 import com.google.android.material.navigation.NavigationView
 import com.yuyakaido.android.cardstackview.*
 import com.yuyakaido.android.cardstackview.sample.CardStackAdapter
@@ -32,7 +31,7 @@ class TestActivity : AppCompatActivity(), CardStackListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_test)
         setupNavigation()
         setupCardStackView()
         setupButton()

@@ -66,7 +66,7 @@ public class IntroActivity extends AhoyOnboarderActivity {
 
     @Override
     public void onFinishButtonPressed() {
-        Intent myIntent = new Intent(this, MainActivity.class);
+        Intent myIntent = new Intent(this, TestActivity.class);
         myIntent.putExtra("key", 2); //Optional parameters
         this.startActivity(myIntent);
 
