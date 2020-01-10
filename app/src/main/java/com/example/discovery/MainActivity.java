@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
+import android.widget.Adapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
@@ -91,10 +92,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupCards() {
-        CardStackView cardStackView = findViewById(R.id.card_stack_view);
+
+
+
+     /*   CardStackView cardStackView = findViewById(R.id.card_stack_view);
         CardStackLayoutManager cardStackLayoutManager = new CardStackLayoutManager();
                 cardStackView.setLayoutManager(); = CardStackLayoutManager()
-        cardStackView.adapter = CardStackAdapter()
+        cardStackView.setAdapter(Adapter adapter); = CardStackAdapter();
+        CardStack*/
     }
 
     private void styleStuff() {

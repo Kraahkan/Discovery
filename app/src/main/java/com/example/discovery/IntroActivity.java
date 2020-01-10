@@ -37,12 +37,12 @@ public class IntroActivity extends AhoyOnboarderActivity {
 
         setOnboardPages(pages);
 
-
         List<Integer> colorList = new ArrayList<>();
         colorList.add(R.color.colorPrimary);
         colorList.add(R.color.colorPrimary);
         colorList.add(R.color.colorPrimary);
         setColorBackground(colorList);
+
 
         //or
 
@@ -59,5 +59,8 @@ public class IntroActivity extends AhoyOnboarderActivity {
         Intent myIntent = new Intent(this, MainActivity.class);
         myIntent.putExtra("key", 2); //Optional parameters
         this.startActivity(myIntent);
+        finish();
+
+
     }
 }
