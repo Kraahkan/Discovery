@@ -1,24 +1,23 @@
 package com.example.discovery;
 
-import android.graphics.Color;
-import android.graphics.Typeface;
+
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.NonNull;
-import android.view.MenuItem;
+
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.github.jinatonic.confetti.CommonConfetti;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.irozon.sneaker.Sneaker;
 import com.shashank.sony.fancygifdialoglib.FancyGifDialog;
 import com.shashank.sony.fancygifdialoglib.FancyGifDialogListener;
@@ -26,29 +25,6 @@ import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class MainActivity extends AppCompatActivity {
 
-    /*
-
-        private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-                = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.navigation_home:
-                        mTextMessage.setText(R.string.app_name);
-                        FancyToast.makeText(getApplicationContext(),"Hello World !",FancyToast.LENGTH_LONG,FancyToast.DEFAULT,true);
-                        return true;
-                    case R.id.navigation_dashboard:
-                        mTextMessage.setText(R.string.title_dashboard);
-                        return true;
-                    case R.id.navigation_notifications:
-                        mTextMessage.setText(R.string.title_notifications);
-                        return true;
-                }
-                return false;
-            }
-        };
-    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -60,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
       //  navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         navView.setVisibility(View.INVISIBLE);
-        // Customize colors
 
        styleStuff();
 

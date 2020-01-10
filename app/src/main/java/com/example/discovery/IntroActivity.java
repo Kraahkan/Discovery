@@ -1,9 +1,6 @@
 package com.example.discovery;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.codemybrainsout.onboarder.AhoyOnboarderActivity;
