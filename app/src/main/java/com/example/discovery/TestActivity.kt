@@ -1,8 +1,11 @@
 package com.example.discovery
 
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.LinearInterpolator
@@ -35,6 +38,28 @@ class TestActivity : AppCompatActivity(), CardStackListener {
         setupNavigation()
         setupCardStackView()
         setupButton()
+        styleStuff()
+    }
+
+    private fun styleStuff() {
+        val actionBar = supportActionBar
+        actionBar!!.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.colorPrimary)))
+
+        val window = this.window
+
+        // Don't need for this app
+
+        if (Build.VERSION.SDK_INT >= 21.0) {
+
+            // clear FLAG_TRANSLUCENT_STATUS flag:
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+
+            // add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+
+            //this code will be executed on devices running on DONUT (NOT ICS) or later
+            window.statusBarColor = resources.getColor(R.color.colorPrimary)
+        }
     }
 
     override fun onBackPressed() {
@@ -78,6 +103,8 @@ class TestActivity : AppCompatActivity(), CardStackListener {
         // Toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        toolbar.set
 
         // DrawerLayout
         val actionBarDrawerToggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer)
