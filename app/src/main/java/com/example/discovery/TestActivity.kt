@@ -23,6 +23,9 @@ import com.yuyakaido.android.cardstackview.sample.CardStackAdapter
 import com.yuyakaido.android.cardstackview.sample.Spot
 import com.yuyakaido.android.cardstackview.sample.SpotDiffCallback
 
+
+
+
 import java.util.*
 
 class TestActivity : AppCompatActivity(), CardStackListener {
